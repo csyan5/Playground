@@ -12,3 +12,6 @@ A shared worker context is represented by a [SharedWorkerGlobalScope](https://de
 In a worker context, you can't directly manipulate the DOM from inside a worker, or use some default methods and properties of the `window` object. See [Functions and classes available to workers](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers).
 
 Messages sent between workers and the main thread using `postMessage()` method, and respond to messages via the `onmessage` event handler.
+
+* Simple Counter example
+Check the Counter folder for code. When the `increment` button is clicked, the main thread sends a message to the web worker, the worker increment the value by 1 and sends back to the main thread.
