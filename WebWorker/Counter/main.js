@@ -15,6 +15,9 @@ if (window.Worker) {
         console.log('Message received from worker', e.data);
     }
     counterWorker.postMessage("getCurrentCount");
+    counterWorker.onerror = function (e) {
+        console.log("Error in main thread: " + e.message);
+    }
 } else {
     console.error("Web Workers are not supported in this browser.");
 }
